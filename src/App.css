@@ -2,7 +2,7 @@ body {
   background-color: rgb(194 194 194);
 }
 .App {
-  height: 80vh;
+  height: 100vh;
   background-color: rgb(194 194 194);
   display: flex;
   flex-wrap: wrap;
@@ -25,11 +25,32 @@ body {
   font-family: cursive;
   background-color: rgb(124, 32, 32);
 }
-.winner_text{
+.winner_text {
   text-align: center;
   width: 100%;
   color: #e7e7e7;
   font-family: cursive;
   background-color: rgb(124, 32, 32);
   font-size: 50px;
+}
+.reset_btn {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  padding: 45px 0px;
+}
+.reset_btn button {
+  width: 26%;
+  padding: 14px;
+  border: 1px solid rgb(124, 32, 32);
+  font-size: 20px;
+  background-color: rgb(100, 37, 37);
+  color: white;
+  text-transform: uppercase;
+}
+.reset_btn button:hover {
+  box-shadow: 0px 0px 5px #540b0b;
+  transition: 0.1s ease 0.1s;
+  background-color: rgb(124, 32, 32);
+  color: white;
 }

@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Square from "./components/Square";
 import { useState, useEffect } from "react";
@@ -18,23 +17,11 @@ function App() {
       [2, 4, 6],
       [0, 4, 8],
     ];
-    console.log(" ===== ");
     for (let i = 0; i < winLines.length; i++) {
-      // const element = array[i];
       let [a, b, c] = winLines[i];
-      // console.log(a , "a");
-      // console.log(b , "b");
-      // console.log(c , 'c');
       if (board[a] && board[a] === board[b] && board[b] === board[c]) {
-        console.log("winner");
-                  
-        console.log(board[a]);
-          return board[a];
+        return board[a];
       }
-      // if (board) {
-      //   console.log(board[a] , "board");
-      //   // console.log(board[a]);
-      // }
     }
     return null;
   };
@@ -42,11 +29,9 @@ function App() {
   let winner = winnerCalculate(board);
 
   const handleClick = (i) => {
-    // console.log(i, "Btn Index");
     let boardDup = [...board];
 
     if (boardDup[i] === null) {
-      // console.log(boardDup);
       if (winner || boardDup[i]) {
         return false;
       } else {
@@ -54,10 +39,17 @@ function App() {
         setBoard(boardDup);
         setBoolNext(!boolNext);
       }
-      // console.log(boardDup[i]);
     } else {
       return false;
     }
+  };
+
+  const resetBoard = () => {
+    let dup = [...board];
+    for (let i = 0; i < dup.length; i++) {
+      dup[i] = null;
+    }
+    setBoard(dup);
   };
 
   return (
@@ -69,6 +61,9 @@ function App() {
         {board.map((item, i) => {
           return <Square value={item} onClick={() => handleClick(i)} />;
         })}
+      </div>
+      <div className="reset_btn">
+        <button onClick={resetBoard}>Reset</button>
       </div>
       <div className="winner_text">{winner ? "Winner is : " + winner : ""}</div>
     </div>
