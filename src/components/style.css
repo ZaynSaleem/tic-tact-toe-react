@@ -1,0 +1,12 @@
+.btn_click {
+  background: #eaeaea;
+  font-size: 65px;
+  font-weight: 300;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid rgb(124, 32, 32);
+  color: rgb(138 76 76);
+  font-family: cursive;
+  text-align: center;
+  padding-top: 26px;
+}
